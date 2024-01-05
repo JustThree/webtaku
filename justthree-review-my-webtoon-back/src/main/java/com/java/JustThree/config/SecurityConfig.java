@@ -56,11 +56,13 @@ public class SecurityConfig {
 //                .addFilterBefore(jwtExceptionFilter(), JwtAuthorizationFilter.class)
                 .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .addFilter(jwtAuthorizationFilter())
-                .authorizeHttpRequests(
+                .authorizeHttpRequests
+                        (
                         authorize -> authorize
 //                                .requestMatchers("/**").permitAll()
                                 //공통으로 허용되는 주소
-                                .requestMatchers(HttpMethod.GET,"/api/reset-password","/board/**","/board/notice",
+
+                                .requestMatchers(HttpMethod.GET,"/index.html","/assets/**","/error","/api/reset-password","/board/**","/board/notice",
                                         "/api/check-nickname","/api/check-nickname","/api/auth/accessoken"
                                         ,"/chat/**","/chats/**","/ws/**","/webtoon/**","/mypage/userinfo/**","/mypage/follow/**","/mypage/reviewed/**","/mypage/interested/**").permitAll()
                                 .requestMatchers(HttpMethod.POST,"/api/join","/api/verify-code","/api/logout","/api/email-verification").permitAll()

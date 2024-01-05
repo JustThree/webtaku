@@ -1,0 +1,50 @@
+#webtoonlist {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+#thumbnail {
+    width: 129px;
+    height: 188px;
+}
+#title{
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: -1.2px;
+    font-size: 22px;
+    line-height: 29px;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 23px;
+}
+#ratedtoon{
+    margin-left: 16px;
+}
+#titletext{
+    text-decoration: none; /* 밑줄 제거 */
+    color: rgb(41, 42, 50);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    line-height: 22px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#tooninfo{
+    color: rgb(120, 120, 120);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    line-height: 18px;
+    white-space: nowrap;
+    height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.toon-link{
+    display: block;
+    cursor: pointer;
+}

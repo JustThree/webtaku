@@ -1,0 +1,45 @@
+.accent-font {
+    font-weight: 1000;
+    font-size: 0.8em;
+}
+.no-color-line{
+    color:black;
+    text-decoration:none;
+}
+.top-user-info{
+    display:flex;
+    padding-left: 15px;
+    align-items: center;
+}
+.top-header-info{
+    margin: 40%;
+    font-weight: bolder;
+    font-size: 2em
+}
+.webtoon-title{
+    font-size:1.8em;
+    padding-top:0;
+    padding-bottom:0;
+}
+.genre{
+    padding-top:10px;
+    padding-bottom:0
+}
+.rating{
+    padding-top:10px;
+    padding-bottom:0
+}
+.webtoonImg{
+    border-radius: 25px;
+    height:300px;
+    width:200px;
+    object-fit:cover;
+    padding: 0 0 5% 0
+}
+.content{
+    min-height:400px;
+}
+.img-center-div{
+    display: flex;
+    justify-content: center;
+}

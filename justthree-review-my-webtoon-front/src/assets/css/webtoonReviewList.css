@@ -1,0 +1,20 @@
+.back-move-btn{
+    margin-left: 2%;
+    position: absolute;
+    top: 25%;
+}
+.top-header-text{
+    position: absolute;
+    top: 25%;
+    right: 50%;
+    font-weight: bolder;
+    font-size: 2em;
+}
+.no-color-line{
+    color:black;text-decoration:none;
+}
+.review-btn{
+    position: absolute;
+    top: 30%;
+    right: 5%;
+}

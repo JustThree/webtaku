@@ -1,0 +1,41 @@
+.basicBtnColor{
+    background-color:#DFCCFB;
+}
+
+#registerContainer{
+    width : 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#LoginTitle{
+    text-align : center;
+    margin-bottom : 20px;
+    font-weight : bold;
+}
+#LoginContainer{
+    margin-top : 150px;
+
+}
+
+.flex{
+    display : flex;
+}
+
+.loadingImg{
+    height:40px;
+    width:40px;
+}
+
+.registerBtnContainer{
+    max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.registerBtn{
+    width:100px;
+    float: right;
+}

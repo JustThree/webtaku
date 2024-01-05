@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'BMEuljirooraeorae';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/BMEuljirooraeorae.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-color:#F5F5F5;
+}
+* {
+    font-family: 'BMEuljirooraeorae';
+}
+

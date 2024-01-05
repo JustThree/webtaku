@@ -1,0 +1,14 @@
+body{
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.main-card{
+    width:70%;
+    margin:auto;
+}
+.no-color-line{
+    color:black;
+    text-decoration:none;
+}

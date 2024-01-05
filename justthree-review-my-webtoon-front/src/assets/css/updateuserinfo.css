@@ -1,0 +1,98 @@
+#userPic{
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    border: 1px solid #000;
+    background: lightgray 50% / cover no-repeat;
+    margin-top: 42px;
+    margin-right:62px;
+    margin-left:121px ;
+}
+button.v-btn.v-btn--elevated.v-theme--light.v-btn--density-default.v-btn--size-default.v-btn--variant-elevated.vaildateBtn.basicBtnColor {
+    color: white;
+    background-color: #96A0F9;
+    margin-left: 7px;
+}
+.text-subtitle-1.text-medium-emphasis.d-flex.align-center.justify-space-between {
+    margin-top: 20px;
+}
+.v-input.v-input--horizontal.v-input--center-affix.v-input--density-default.v-locale--is-ltr.v-file-input[data-v-56ebd270] {
+    margin-top: 10px;
+}
+.v-input.v-input--horizontal.v-input--center-affix.v-input--density-default.v-locale--is-ltr.v-file-input {
+    margin-top: 40px;
+}
+.form-group {
+    margin-bottom: -24px;
+}
+button.v-btn.v-btn--block.v-btn--elevated.v-theme--light.v-btn--density-default.v-btn--size-large.v-btn--variant-elevated.mb-8 {
+    margin-top: 65px;
+}
+small#nicknameMsg {
+    margin-left: -351px;
+    /* margin-bottom: 46px; */
+    margin-top: 32px;
+}
+#myInfoLayout{
+    width: 885px;
+    height: 600px;
+    border-radius: 30px;
+    box-shadow: 0 0 90px 0 rgba(0, 0, 0, 0.30);
+    overflow: hidden;
+}
+#updateUserInfoForm_layout{
+    border-radius: 30px;
+    box-shadow: 0 0 90px 0 rgba(0, 0, 0, 0.30);
+    overflow: hidden;
+    margin-top:40px;
+}
+form{
+    text-align: -webkit-center;
+    margin-top: 190px;
+}
+div#changeimgtxt {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 0.1px;
+}
+button#changeimgbtn {
+    width: 250px;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #DFCCFB;
+    box-shadow: 0 5px 5px 0 #D9D9D9;
+    border-color: aliceblue;
+    margin-top: 31px;
+}
+#btn_changeprofile{
+
+}
+#layoutuppercontent {
+    display: flex;
+    align-items: center; /* 수직 정렬을 위한 옵션, 필요에 따라 조절 */
+}
+#upperrightcontent {
+    display: flex;
+    flex-direction: column; /* 컨텐츠를 세로로 나열하도록 설정 */
+}
+label {
+    color: #000;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    display: flex;
+}
+input#nickname {
+    display: flex;
+    width: 375px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}

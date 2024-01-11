@@ -1,3 +1,4 @@
+
 ![텍스트](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=WebTaku)
 
 
@@ -78,8 +79,16 @@
 ##### 1. 메인화면
   <img width="500"  src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/141565053/adb5ab4a-5ad6-4baf-ae5a-699b7cde7a76"/>
   
-#### Ⅱ 실시간 채팅
 
+https://github.com/JustThree/justthree-review-my-webtoon-back/assets/52907198/e109de60-0f0d-443d-a4e6-cc5beeb93a5d
+
+
+
+#### Ⅱ 실시간 채팅
+  <img width="500"  src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/120872728/82fb1de5-8f4e-48d4-a1a3-4a107457cbfa"/>
+  <img width="500"  src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/120872728/7060e3b7-a575-4a0b-8394-9d1f0da963fe"/>
+
+  
 #### Ⅲ 커뮤니티 및 공지사항(사용자) 게시판
 ##### 1. 커뮤니티 목록
   <img width="500"  src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/141565053/b43679d6-ed82-415f-88a9-d584b80479a8"/>
@@ -91,9 +100,31 @@
   <img width="500"  src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/141565053/82aed08a-69c8-458f-a32a-e10af8fac4e2"/>
 
 ##### 4. 공지 목록
-  <img width="500"  src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/141565053/fb10e5f4-c25c-4987-9a43-1dff37f14680"/>
+  <img width="500"  src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/141565053/ce8790e5-0965-4859-8c69-800e829f4f11"/>
 
 
 #### Ⅳ 유저 팔로우 및 마이페이지
+##### 1. 내 정보 수정
+  <img width="500"  src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/99237245/d9a96100-8ca9-46cf-8d69-f9b23ac43f2f"/>
+
+##### 2. 평가 웹툰 조회  
+  <img width="500"  src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/99237245/c48234df-2de4-43be-9c0e-36ce22cf92c2"/>
+  
+##### 3. 팔로우 기능
+  <img width="500"  src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/99237245/ccf950ca-aa2b-4cad-befe-db1918ba550c"/>
+  
+##### 4. 타인의 유저페이지,팔로우 목록조회
+  <img width="500"  src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/99237245/7f27bc8d-f0e8-4092-8c6d-8c722e72caa0"/>
+
 
 #### Ⅴ 회원가입 및 로그인, 관리자 페이지
+##### 1. 회원가입
+  <img width="500" src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/99237245/13b10752-140d-44e3-94a3-b8623e95f69c"/>
+
+##### 2. 로그인
+  <img width="500" src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/99237245/a5802cc1-d5ee-4d1c-a1cf-10a1908b3f9b"/>
+  
+##### 3. 관리자 페이지
+  <img width="500" src="https://github.com/JustThree/justthree-review-my-webtoon-back/assets/99237245/463a2414-d08b-44d3-b41d-cf284fdb57d9"/>
+
+

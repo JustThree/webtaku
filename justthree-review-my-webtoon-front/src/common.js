@@ -6,9 +6,20 @@ import {
 import { storeToRefs } from 'pinia';
 import axios from 'axios';
 
+const apiBase = () => import.meta.env.PROD
+    ? window.location.origin
+    : `http://${window.location.hostname}:8089`;
+
+const wsBase = () => {
+    if (import.meta.env.PROD) {
+        const proto = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        return `${proto}//${window.location.host}`;
+    }
+    return `ws://${window.location.hostname}:8089`;
+};
+
 const apiToken = async (urn, method, data, token) => {
-    const url = "http://" + window.location.hostname + ":8089/" + urn
-    console.log(url)
+    const url = `${apiBase()}/${urn}`;
     return (await axios({
         url,
         method,
@@ -17,19 +28,18 @@ const apiToken = async (urn, method, data, token) => {
             Authorization: token,
         }
     }).catch(e => {
-        console.log("http://" + window.location.hostname + ":8089/" + urn)
         console.log(e);
-        return { data: e}; //error 발생 시 e 반환
+        return { data: e};
     })).data
 }
 const api = async (urn, method, data) => {
-    const url = "http://" + window.location.hostname + ":8089/" + urn;
+    const url = `${apiBase()}/${urn}`;
     return (await axios({
         method: method,
         url,
         data,
     }).catch(e => {
-        return { data: e}; //error 발생 시 e 반환
+        return { data: e};
     })).data;
 }
 
@@ -55,5 +65,5 @@ const createdDiff = (created) => {
 }
 
 export {
-    api, apiToken, createdDiff
+    api, apiToken, createdDiff, apiBase, wsBase
 };

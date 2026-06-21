@@ -104,7 +104,7 @@
 </template>
 <script setup>
 import {ref, onUnmounted, defineProps, onMounted, watch} from 'vue';
-import {api, createdDiff} from '@/common.js'
+import {api, createdDiff, wsBase} from '@/common.js'
 import {useAuthStore} from "@/stores/auth.store.js";
 import router from "@/router/index.js";
 
@@ -146,7 +146,7 @@ onMounted(() => {
   const token = JSON.parse(authStore.token).accessToken;
 
   // Connect WebSocket
-  ws = new WebSocket(`ws://${window.location.hostname}:8089/chat?${token}&${masterId}`/*, [token, masterId]*/);
+  ws = new WebSocket(`${wsBase()}/chat?${token}&${masterId}`);
   // sender -> sessionStorage(token) 변경 예정
   ws.onmessage = function (onmessage) {
     console.log(onmessage)

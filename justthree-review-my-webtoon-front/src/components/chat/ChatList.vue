@@ -68,7 +68,7 @@
 
 <script setup>
 import { onBeforeMount, onUnmounted, ref, watch} from 'vue';
-import { api, createdDiff } from '@/common.js';
+import { api, createdDiff, wsBase } from '@/common.js';
 import {useAuthStore} from "@/stores/auth.store.js";
 
 const page = ref(1);
@@ -79,7 +79,7 @@ let token = null;
 if(useAuthStore().user != undefined){
   token = JSON.parse(useAuthStore().user.token).accessToken;
 }
-const ws = new WebSocket(`ws://${window.location.hostname}:8089/chat?${token}`);
+const ws = new WebSocket(`${wsBase()}/chat?${token}`);
 ws.onmessage = () => {
   loadChats();
 }

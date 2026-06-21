@@ -118,13 +118,14 @@ import {useAuthStore} from "@/stores/auth.store.js";
 import {ref, onMounted} from "vue";
 import axios from 'axios';
 import router from "@/router/index.js";
+import { apiBase } from "@/common.js";
 const authStore = useAuthStore()
 
 // API URL
-const joinUrl = import.meta.env.VITE_SERVER_URL + import.meta.env.VITE_JOIN_API_PATH;
-const checkEmailUrl = import.meta.env.VITE_SERVER_URL + import.meta.env.VITE_EMAIL_VERIFICATION_API_PATH;
-const checkEmailCodeUrl = import.meta.env.VITE_SERVER_URL + import.meta.env.VITE_VERIFY_CODE_API_PATH;
-const checkNickNameUrl = import.meta.env.VITE_SERVER_URL + import.meta.env.VITE_CHECK_NICKNAME_API_PATH;
+const joinUrl = apiBase() + import.meta.env.VITE_JOIN_API_PATH;
+const checkEmailUrl = apiBase() + import.meta.env.VITE_EMAIL_VERIFICATION_API_PATH;
+const checkEmailCodeUrl = apiBase() + import.meta.env.VITE_VERIFY_CODE_API_PATH;
+const checkNickNameUrl = apiBase() + import.meta.env.VITE_CHECK_NICKNAME_API_PATH;
 
 //반응형 변수
 const showToken = ref(false);

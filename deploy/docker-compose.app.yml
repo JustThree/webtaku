@@ -4,7 +4,9 @@ services:
     container_name: webtaku
     restart: unless-stopped
     ports:
-      - "127.0.0.1:8089:8089"
+      # 0.0.0.0:8089 — Jenkins 컨테이너에서 host.docker.internal:8089 접근 위해
+      # OCI Security List가 8089를 외부에서 차단하므로 안전
+      - "8089:8089"
     env_file:
       - /opt/webtaku/webtaku.env
     extra_hosts:

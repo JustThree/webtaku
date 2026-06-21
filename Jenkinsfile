@@ -35,7 +35,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                    docker compose -f ${COMPOSE_FILE} up -d --remove-orphans
+                    docker compose -f ${COMPOSE_FILE} up -d --force-recreate --remove-orphans
                 '''
             }
         }

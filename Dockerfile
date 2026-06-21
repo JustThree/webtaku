@@ -1,5 +1,5 @@
 # === Stage 1: Frontend build ===
-FROM node:18-alpine AS frontend
+FROM node:22-alpine AS frontend
 WORKDIR /build
 COPY justthree-review-my-webtoon-front/package.json justthree-review-my-webtoon-front/package-lock.json* ./
 RUN npm ci

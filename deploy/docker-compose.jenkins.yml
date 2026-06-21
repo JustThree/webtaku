@@ -1,6 +1,8 @@
 services:
   jenkins:
-    image: jenkins/jenkins:lts-jdk17
+    build:
+      context: ./jenkins
+    image: webtaku-jenkins:latest
     container_name: jenkins
     restart: unless-stopped
     user: root
@@ -14,6 +16,8 @@ services:
       - jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
       - /opt/webtaku:/opt/webtaku
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 volumes:
   jenkins_home:

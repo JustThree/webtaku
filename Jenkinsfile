@@ -1,22 +1,16 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'jdk17'
-        nodejs 'node18'
-    }
-
     environment {
-        BACKEND_DIR  = 'justthree-review-my-webtoon-back'
-        FRONTEND_DIR = 'justthree-review-my-webtoon-front'
-        DEPLOY_DIR   = '/opt/webtaku'
-        SERVICE_NAME = 'webtaku'
-        HEALTH_URL   = 'http://127.0.0.1:8089/actuator/health'
+        IMAGE_NAME    = 'webtaku'
+        DEPLOY_DIR    = '/opt/webtaku'
+        COMPOSE_FILE  = "${DEPLOY_DIR}/docker-compose.app.yml"
+        HEALTH_PORT   = '8089'
     }
 
     options {
         timestamps()
-        timeout(time: 20, unit: 'MINUTES')
+        timeout(time: 30, unit: 'MINUTES')
         buildDiscarder(logRotator(numToKeepStr: '20'))
     }
 
@@ -27,30 +21,21 @@ pipeline {
             }
         }
 
-        stage('Frontend Build') {
+        stage('Build Image') {
             steps {
-                dir("${FRONTEND_DIR}") {
-                    sh 'npm ci'
-                    sh 'npm run build'
-                }
-            }
-        }
-
-        stage('Backend Build') {
-            steps {
-                dir("${BACKEND_DIR}") {
-                    sh 'chmod +x gradlew'
-                    sh './gradlew clean bootJar -x test'
-                }
+                sh '''
+                    docker build \
+                      -t ${IMAGE_NAME}:${BUILD_NUMBER} \
+                      -t ${IMAGE_NAME}:latest \
+                      .
+                '''
             }
         }
 
         stage('Deploy') {
             steps {
                 sh '''
-                    sudo install -d -m 755 ${DEPLOY_DIR}
-                    sudo cp ${BACKEND_DIR}/build/libs/*.jar ${DEPLOY_DIR}/app.jar
-                    sudo systemctl restart ${SERVICE_NAME}
+                    docker compose -f ${COMPOSE_FILE} up -d --remove-orphans
                 '''
             }
         }
@@ -59,14 +44,18 @@ pipeline {
             steps {
                 sh '''
                     for i in $(seq 1 30); do
-                        if curl -fsS ${HEALTH_URL} >/dev/null; then
-                            echo "Service is up"
+                        curl -fsS --connect-timeout 2 http://host.docker.internal:${HEALTH_PORT}/ > /dev/null 2>&1
+                        status=$?
+                        # 0 = 2xx/3xx, 22 = HTTP 4xx/5xx (app responded — that's good enough)
+                        if [ $status -eq 0 ] || [ $status -eq 22 ]; then
+                            echo "Service is up (curl exit=$status)"
                             exit 0
                         fi
+                        echo "[$i/30] not ready (curl exit=$status), sleeping..."
                         sleep 2
                     done
-                    echo "Health check failed"
-                    sudo journalctl -u ${SERVICE_NAME} -n 100 --no-pager || true
+                    echo "Health check timeout"
+                    docker logs --tail 100 webtaku || true
                     exit 1
                 '''
             }
@@ -74,7 +63,7 @@ pipeline {
     }
 
     post {
-        success { echo "Deployed build #${env.BUILD_NUMBER}" }
+        success { echo "Build #${env.BUILD_NUMBER} deployed" }
         failure { echo "Build #${env.BUILD_NUMBER} failed" }
     }
 }

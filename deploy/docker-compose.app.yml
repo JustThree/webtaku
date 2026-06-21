@@ -1,0 +1,11 @@
+services:
+  webtaku:
+    image: webtaku:latest
+    container_name: webtaku
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8089:8089"
+    env_file:
+      - /opt/webtaku/webtaku.env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

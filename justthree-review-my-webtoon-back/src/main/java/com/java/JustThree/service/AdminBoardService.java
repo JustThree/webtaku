@@ -2,6 +2,7 @@ package com.java.JustThree.service;
 
 import com.java.JustThree.domain.Board;
 import com.java.JustThree.domain.Webtoon;
+import com.java.JustThree.dto.AgeGrade;
 import com.java.JustThree.dto.admin.FollowCount;
 import com.java.JustThree.dto.admin.WebtoonLikeCountResponse;
 import com.java.JustThree.dto.admin.WebtoonRateResponse;
@@ -85,8 +86,8 @@ public class AdminBoardService {
     // 통계용 TOP 평점 웹툰
     public Page<WebtoonRateResponse> top5RateWebtoon(){
         Pageable pageable = PageRequest.of(0, 5);
-        return webtoonRepository.findByAgeGradCdNmIsNotAndOrderByPopularity
-                        ("19세 이상", pageable)
+        return webtoonRepository.findByAgeGradCdIsNotAndOrderByPopularity
+                        (AgeGrade.ADULT_CODE, pageable)
                 .map(webtoon -> WebtoonRateResponse.
                         fromEntity(webtoon,
                                 starRepository.getAverageRatingForMasterId(webtoon.getMasterId())));

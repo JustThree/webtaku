@@ -42,11 +42,12 @@ pipeline {
 
         stage('Health Check') {
             steps {
-                sh '''
+                sh '''#!/bin/bash
+                    set +e   # curl 실패해도 다음 iteration로 진행
                     for i in $(seq 1 30); do
                         curl -fsS --connect-timeout 2 http://host.docker.internal:${HEALTH_PORT}/ > /dev/null 2>&1
                         status=$?
-                        # 0 = 2xx/3xx, 22 = HTTP 4xx/5xx (app responded — that's good enough)
+                        # 0 = 2xx/3xx, 22 = HTTP 4xx/5xx, 모두 "앱 응답함"
                         if [ $status -eq 0 ] || [ $status -eq 22 ]; then
                             echo "Service is up (curl exit=$status)"
                             exit 0

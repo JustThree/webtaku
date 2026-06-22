@@ -1,18 +1,25 @@
 <template>
   <v-card>
-    <v-toolbar class="w-75 mx-auto" color="white" height="80">
+    <v-toolbar class="header-toolbar mx-auto" color="white" height="80">
 
-      <img alt="logo" src="@/assets/images/blackDUK.png" @click="$router.push('/')">
+      <v-app-bar-nav-icon
+          class="d-md-none"
+          @click="drawer = !drawer"
+      ></v-app-bar-nav-icon>
 
-      <v-toolbar-title class="ml-2">
+      <img alt="logo" src="@/assets/images/blackDUK.png" class="header-logo" @click="$router.push('/')">
+
+      <v-toolbar-title class="ml-2 d-none d-md-block">
         <v-btn @click="moveWebtoon"> 웹툰 </v-btn>
         <v-btn href="/boardslist/comm"> 커뮤니티 </v-btn>
         <v-btn href="/chatlist"> 채팅 </v-btn>
         <v-btn v-if="user && user.usersRole === 'USER,ADMIN'" href="/admin"> 관리자 </v-btn>
       </v-toolbar-title >
 
-      <v-toolbar-items class="w-50">
-        <v-card-text class="mt-1">
+      <v-spacer class="d-md-none"></v-spacer>
+
+      <v-toolbar-items class="header-actions">
+        <v-card-text class="mt-1 header-search">
           <v-text-field
               v-model="searchText"
               :loading = "loading"
@@ -26,21 +33,39 @@
               @click:append-inner="onClick"
           ></v-text-field>
         </v-card-text>
-        <v-btn v-if="!user" href="/user/login">
+        <v-btn class="d-none d-md-flex" v-if="!user" href="/user/login">
           로그인
         </v-btn>
 
 
-        <v-btn v-if="user" @click="goToMymage">
+        <v-btn class="d-none d-md-flex" v-if="user" @click="goToMymage">
           마이페이지
         </v-btn>
 
-        <v-btn v-if="user" @click="authStore.logout()">
+        <v-btn class="d-none d-md-flex" v-if="user" @click="authStore.logout()">
           로그아웃
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
   </v-card>
+
+  <v-navigation-drawer v-model="drawer" temporary>
+    <v-list nav>
+      <v-list-item prepend-icon="mdi-book-open-variant" title="웹툰" @click="navigate(moveWebtoon)"></v-list-item>
+      <v-list-item prepend-icon="mdi-forum" title="커뮤니티" @click="navigate(() => $router.push('/boardslist/comm'))"></v-list-item>
+      <v-list-item prepend-icon="mdi-chat" title="채팅" @click="navigate(() => $router.push('/chatlist'))"></v-list-item>
+      <v-list-item
+          v-if="user && user.usersRole === 'USER,ADMIN'"
+          prepend-icon="mdi-shield-account"
+          title="관리자"
+          @click="navigate(() => $router.push('/admin'))"
+      ></v-list-item>
+      <v-divider class="my-2"></v-divider>
+      <v-list-item v-if="!user" prepend-icon="mdi-login" title="로그인" @click="navigate(() => $router.push('/user/login'))"></v-list-item>
+      <v-list-item v-if="user" prepend-icon="mdi-account" title="마이페이지" @click="navigate(goToMymage)"></v-list-item>
+      <v-list-item v-if="user" prepend-icon="mdi-logout" title="로그아웃" @click="navigate(() => authStore.logout())"></v-list-item>
+    </v-list>
+  </v-navigation-drawer>
 
 </template>
 <script setup>
@@ -54,6 +79,7 @@ const authStore = useAuthStore()
 const { user } = storeToRefs(authStore);
 const loading = ref(false);
 const searchText = ref("");
+const drawer = ref(false);
 const goToMymage = async () =>{
   await api('api/getUserId','get').then(res => {
     router.push(`/mypage/userinfo/${res}`);
@@ -71,6 +97,10 @@ function moveWebtoon(){
   sessionStorage.removeItem("genre")
   router.push("/webtoon");
 }
+function navigate(fn) {
+  drawer.value = false;
+  fn();
+}
 
 </script>
 <style scoped>
@@ -83,5 +113,32 @@ function moveWebtoon(){
 
 *{
   font-family: 'Pretendard-Regular';
+}
+
+.header-toolbar {
+  width: 75%;
+}
+.header-logo {
+  cursor: pointer;
+  height: 48px;
+}
+.header-actions {
+  width: 50%;
+}
+
+@media (max-width: 960px) {
+  .header-toolbar {
+    width: 100%;
+  }
+  .header-actions {
+    width: auto;
+    flex: 1;
+  }
+  .header-logo {
+    height: 36px;
+  }
+  .header-search {
+    padding: 0 8px !important;
+  }
 }
 </style>

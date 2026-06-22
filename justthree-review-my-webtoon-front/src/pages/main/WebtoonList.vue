@@ -152,9 +152,9 @@ fetchData()
       </v-row>
         <v-row class="justify-center">
         <v-col v-for=" (item, idx) in pageContents"
-               cols="2"
-               style="min-height:150px
-                      ;min-width:150px"
+               cols="4"
+               sm="3"
+               md="2"
         >
           <router-link :to="'/webtoon/' + item.masterId"
             class="no-color-line"
@@ -163,8 +163,7 @@ fetchData()
 <!--              이미지 텍스트 위치 맞추기-->
               <v-img
                   :src="item.imgUrl"
-                  width="150px"
-                  height="150px"
+                  class="webtoon-thumb-square"
                   alt="https://vuetifyjs.com/en/"
                   cover="true"
               >

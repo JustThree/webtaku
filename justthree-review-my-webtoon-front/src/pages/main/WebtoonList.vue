@@ -80,10 +80,12 @@ watch(
 const fetchData = async () => {
   loadContent.value = true
   try {
+    const orderKey = orderObj[queryString.value.order] || 'latest';
+    const genreKey = genreObj[queryString.value.genre] || 'all';
     const response = await api("webtoon?page="
     + (queryString.value.page -1)
-    + "&genre=" + genreObj[queryString.value.genre]
-    + "&order=" + orderObj[queryString.value.order]
+    + "&genre=" + genreKey
+    + "&order=" + orderKey
     , "GET");
     pageContents.value = response.content;
     totalPages.value = response.totalPages;
@@ -133,7 +135,7 @@ fetchData()
       <v-select
           v-model="queryString.order"
           label="정렬"
-          :items="['등록순', '인기순', '평점순']"
+          :items="['', '등록순', '인기순', '평점순']"
           @update:modelValue="changeOrder"
       >
       </v-select>
@@ -144,7 +146,7 @@ fetchData()
           <v-select
               v-model="queryString.genre"
               label="장르"
-              :items="['전체','판타지', '로맨스', '학원', '일상', '코믹', '무협']"
+              :items="['', '전체','판타지', '로맨스', '학원', '일상', '코믹', '무협']"
               @update:modelValue="changeGenre"
           >
           </v-select>

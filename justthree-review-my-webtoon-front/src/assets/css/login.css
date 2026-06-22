@@ -39,3 +39,34 @@
     width:100px;
     float: right;
 }
+
+.auth-card-wide {
+    width: 37%;
+}
+
+@media (max-width: 960px) {
+    #LoginContainer {
+        margin-top: 30px;
+        padding: 0 12px;
+    }
+    .auth-card-wide {
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    .auth-card {
+        padding: 24px !important;
+    }
+    .auth-card-wide {
+        padding: 20px !important;
+    }
+    #LoginTitle {
+        font-size: 1.4rem;
+    }
+    .vaildateBtn {
+        min-width: 64px;
+        padding: 0 8px !important;
+        font-size: 0.78rem;
+    }
+}

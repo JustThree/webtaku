@@ -1,7 +1,7 @@
 <template>
   <div id="LoginContainer">
     <v-card
-        class="mx-auto pa-16 pb-8 rounded-5"
+        class="mx-auto pa-16 pb-8 rounded-5 auth-card"
         elevation="8"
         max-width="650"
     >

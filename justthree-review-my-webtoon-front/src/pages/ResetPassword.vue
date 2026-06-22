@@ -1,9 +1,8 @@
 <template>
   <div id="registerContainer">
     <v-card
-        class="mx-auto pa-12 pb-8"
+        class="mx-auto pa-12 pb-8 auth-card auth-card-wide"
         elevation="8"
-        width="37%"
         rounded="lg"
     >
       <h1 id="LoginTitle">비밀번호 변경</h1>

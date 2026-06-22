@@ -195,14 +195,11 @@ function submitReview() {
            class="flex mid-row m-lg-2"
     >
       <v-card
-          class="flex align-items-center mx-auto"
+          class="flex align-items-center mx-auto mid-content-card"
           width="100%"
           min-height="600px"
-          color=#F8F8F8
-          style="display:flex">
-        <div
-            style="width:30%"
-        >
+          color=#F8F8F8>
+        <div class="mid-thumb-wrap">
           <v-img
               style="border-radius: 25px;"
               :src="data.imgUrl"
@@ -213,12 +210,12 @@ function submitReview() {
           </v-img>
         </div>
         <v-card
-            width="70%"
+            class="mid-info-wrap"
             height="100%"
         >
           <v-card
               height="30%"
-              style="display: flex"
+              class="mid-rating-row"
           >
             <v-rating
                 :half-increments=true
@@ -257,7 +254,7 @@ function submitReview() {
                     ></v-icon>
                   </v-col>
                   <v-col class="flex-column" style="text-align: center">
-                    <v-dialog width="1000" height="800px"
+                    <v-dialog max-width="1000" width="95%" height="800px"
                               scrollable
                     >
                       <template v-slot:activator="{ props }">

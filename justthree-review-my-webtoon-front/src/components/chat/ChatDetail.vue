@@ -9,7 +9,7 @@
 
   <div id='chatt'>
     <br/>
-    <div id="container" style="height: 380px; overflow-y: scroll;">
+    <div id="container" class="chat-msg-container">
       <div v-for="item in talk" :key="item.created" class="d-flex mx-4">
         <div v-if="userNickname === item.senderNickname" class="my-2 w-75 v-row justify-end">
           <div class="d-flex mx-2">
@@ -57,7 +57,7 @@
 
     <v-divider></v-divider>
     <v-banner>
-      <v-sheet width="500" class="mx-auto">
+      <v-sheet class="mx-auto chat-input-sheet">
         <v-form @submit.prevent>
           <v-text-field
               v-model="contents"
@@ -102,6 +102,22 @@
     </v-layout>
   </body>
 </template>
+<style scoped>
+.chat-msg-container {
+  height: 380px;
+  overflow-y: scroll;
+}
+.chat-input-sheet {
+  width: 500px;
+  max-width: 100%;
+}
+
+@media (max-width: 960px) {
+  .chat-msg-container {
+    height: 50vh;
+  }
+}
+</style>
 <script setup>
 import {ref, onUnmounted, defineProps, onMounted, watch} from 'vue';
 import {api, createdDiff, wsBase} from '@/common.js'

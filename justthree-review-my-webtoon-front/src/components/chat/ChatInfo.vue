@@ -24,7 +24,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-<body class="mx-8">
+<body class="mx-2 mx-md-8">
         <h5 @click="$router.push(`/webtoon/${masterId}`)">{{title}}</h5>
         <h6>{{ genre }} / {{ writer }} {{ painter }}</h6>
 

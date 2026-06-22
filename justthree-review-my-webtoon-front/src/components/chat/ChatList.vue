@@ -1,6 +1,6 @@
 <template>
   <div class="pa-5" style="background-color:#F5F5F5">
-    <v-card class="w-50 my-13 pa-5" rounded="xl" height="600px">
+    <v-card class="chat-list-card my-13 pa-5" rounded="xl">
 
       <v-tabs bg-color="" show-arrows slider-color="purple-lighten-4" align-tabs="center" v-model="page">
         <v-tab :value="1">
@@ -18,27 +18,27 @@
       </v-tabs>
 
       <br>
-      <v-autocomplete class="mx-16 my-2" variant="outlined" label="웹툰 제목을 입력해주세요 (2자 이상)"
+      <v-autocomplete class="chat-search my-2" variant="outlined" label="웹툰 제목을 입력해주세요 (2자 이상)"
                     prepend-inner-icon="mdi-magnify" hide-details v-model="searchWord"
                       :items="searchItems"></v-autocomplete>
 
       <v-infinite-scroll :height="400" :chats="chats" :onLoad="load" v-if="chats.length>0">
         <template v-for="chat in chats" :key="chat.masterId">
-          <div class="mx-16">
+          <div class="chat-row-wrapper">
             <hr>
-            <v-row class="pa-6 gc-14">
+            <v-row class="chat-row gc-14">
               <!--      img, title, lastMsg(sender, content), lastMsgTime, ChatURL -->
-              <v-avatar calss="v-col" size="80" variant="outlined">
+              <v-avatar class="chat-avatar" variant="outlined">
                 <img :src="chat.imageUrl" alt="sender" />
               </v-avatar>
-              <v-col class="w-50 mt-auto mb-auto">
+              <v-col class="chat-row-text mt-auto mb-auto">
                 <v-row justify="space-between">
-                  <div class="text-h6 font-weight-bold mb-1"> {{ chat.title }} </div>
-                  <div class="text-medium-emphasis"> {{ createdDiff(chat.created)  }}</div>
+                  <div class="text-h6 font-weight-bold mb-1 chat-title-text"> {{ chat.title }} </div>
+                  <div class="text-medium-emphasis text-caption-mobile"> {{ createdDiff(chat.created)  }}</div>
                 </v-row>
-                <v-row class="text-medium-emphasis" justify="start"> {{ chat.usersNickname + ": " + chat.contents }} </v-row>
+                <v-row class="text-medium-emphasis chat-last-msg" justify="start"> {{ chat.usersNickname + ": " + chat.contents }} </v-row>
               </v-col>
-              <v-btn v-if="token" :href="'/chat/' + chat.masterId" calss="v-col" variant="tonal" color="#924AFE" style="align-self: center;">
+              <v-btn v-if="token" :href="'/chat/' + chat.masterId" variant="tonal" color="#924AFE" class="chat-join-btn">
                 참여하기
               </v-btn>
             </v-row>
@@ -47,8 +47,7 @@
         <template
                v-slot:empty>
           <v-alert
-              class="mx-16"
-              width="10"
+              class="chat-empty-alert"
               color="purple"
               variant="outlined"
               closable="true"
@@ -139,5 +138,72 @@ const loadChats = ()=> {
 
 * {
   font-family: 'Pretendard-Regular';
+}
+
+.chat-list-card {
+  width: 50%;
+  height: 600px;
+}
+.chat-search {
+  margin-left: 64px;
+  margin-right: 64px;
+}
+.chat-row-wrapper {
+  margin-left: 64px;
+  margin-right: 64px;
+}
+.chat-row {
+  padding: 24px;
+}
+.chat-avatar {
+  width: 80px;
+  height: 80px;
+}
+.chat-row-text {
+  width: 50%;
+}
+.chat-join-btn {
+  align-self: center;
+}
+.chat-empty-alert {
+  margin-left: 64px;
+  margin-right: 64px;
+}
+
+@media (max-width: 960px) {
+  .chat-list-card {
+    width: 100%;
+    height: auto;
+  }
+  .chat-search,
+  .chat-row-wrapper,
+  .chat-empty-alert {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .chat-row {
+    padding: 12px;
+  }
+  .chat-avatar {
+    width: 56px;
+    height: 56px;
+  }
+  .chat-row-text {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+  }
+  .chat-title-text {
+    font-size: 1rem !important;
+    line-height: 1.25;
+    word-break: break-all;
+  }
+  .chat-last-msg {
+    font-size: 0.85em;
+  }
+  .chat-join-btn {
+    min-width: 64px;
+    font-size: 0.78rem;
+  }
 }
 </style>

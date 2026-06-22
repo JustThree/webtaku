@@ -216,4 +216,40 @@ onMounted(async  ()=>{
 ::-webkit-scrollbar {
     display: none;
 }
+
+@media (max-width: 768px) {
+    .menu-frame {
+        height: auto;
+        flex-direction: column;
+        gap: 8px;
+        padding: 10px;
+        line-height: normal;
+        margin: 0;
+    }
+    .sort-menu-frame {
+        width: 100%;
+        margin-right: 0;
+        padding-top: 0;
+    }
+    .search-create-frame {
+        width: 100%;
+        flex-direction: row;
+        gap: 6px;
+    }
+    .search-input-frame {
+        min-width: 0;
+        flex: 1;
+        margin-left: 0;
+        line-height: normal;
+    }
+    .search-input {
+        width: 100%;
+    }
+    .create-btn-frame {
+        width: auto;
+    }
+    .create-btn {
+        min-width: 70px;
+    }
+}
 </style>

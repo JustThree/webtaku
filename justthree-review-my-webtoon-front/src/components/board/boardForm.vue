@@ -78,7 +78,7 @@ const goBack = () => {
         <div v-if="board.boardImgMapList.length>0" class="d-flex justify-space-around align-center bg-white">
             <div class="ma-4" v-for="(imgMap, index) in board.boardImgMapList" :key="index" >
                 <div class="image-container">
-                    <v-img class="bg-white" width="300" :src="imgMap.accessUrl" cover></v-img>
+                    <v-img class="bg-white form-image" :src="imgMap.accessUrl" cover></v-img>
                     <v-btn
                         variant="text"
                         style="position: absolute; z-index: 1; top: 5px; right: 5px;color: red;font-weight:900;"
@@ -98,9 +98,10 @@ const goBack = () => {
         </v-row>
     </v-container>
 </template>
-<style>
+<style scoped>
 /* 등록 & 수정 */
-.v-textarea .v-field--no-label textarea, .v-textarea .v-field--active textarea {
+:deep(.v-textarea .v-field--no-label textarea),
+:deep(.v-textarea .v-field--active textarea) {
     opacity: 1;
     height: 400px;
 }
@@ -108,9 +109,27 @@ const goBack = () => {
     display: flex;
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 /*  수정일 때  */
 .image-container {
-    position: relative; /* 부모 요소에 대해 상대적인 위치 설정 */
+    position: relative;
+}
+.form-image {
+    width: 300px;
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+    :deep(.v-textarea .v-field--no-label textarea),
+    :deep(.v-textarea .v-field--active textarea) {
+        height: 240px;
+    }
+    .frame-bottom {
+        gap: 8px;
+    }
+    .form-image {
+        width: 100%;
+    }
 }
 </style>

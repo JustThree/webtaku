@@ -38,4 +38,13 @@ const showCommunityTab = () =>{
     font-size: 20px;
     font-weight: bold;
 }
+
+@media (max-width: 600px) {
+    .tab-menu-frame {
+        margin: 10px;
+    }
+    .tab-menu {
+        font-size: 16px;
+    }
+}
 </style>

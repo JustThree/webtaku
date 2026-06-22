@@ -275,7 +275,7 @@ onMounted(async () =>{
                     <div>
                         <div class="images-frame">
                             <div class="text-overline">{{imgMap.originName}}</div>
-                            <v-img class="bg-white" width="300" :src="imgMap.accessUrl" cover></v-img>
+                            <v-img class="bg-white board-image" :src="imgMap.accessUrl" cover></v-img>
                         </div>
                     </div>
                 </v-carousel-item>
@@ -425,5 +425,46 @@ onMounted(async () =>{
 }
 .reply-list-frame{
     width: 95%;
+}
+
+.board-image {
+    width: 300px;
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+    .top-frame {
+        height: auto;
+        padding: 12px 10px;
+    }
+    .top-title-text {
+        padding-left: 0;
+        font-size: 18px;
+    }
+    .top-desc-frame,
+    .top-bottom-frame {
+        width: 100%;
+        padding-left: 0;
+        gap: 10px;
+        flex-wrap: wrap;
+        font-size: 0.85em;
+    }
+    .edit-btns {
+        margin-left: auto;
+    }
+    .reply-input-frame {
+        width: 100%;
+        padding: 6px;
+        gap: 6px;
+    }
+    .reply-list-frame {
+        width: 100%;
+    }
+    .board-image {
+        width: 100%;
+    }
+    .images-frame {
+        margin: 4px;
+    }
 }
 </style>

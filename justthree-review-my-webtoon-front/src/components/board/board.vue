@@ -24,7 +24,6 @@ watchEffect(()=>{
     <div>
         <v-card
             width="100%"
-            height="160px"
             @click="$router.push({path: `/boards/${boardId}`, query:{noticeYn: noticeYn}})"
             class="card-frame"
         >
@@ -55,10 +54,11 @@ watchEffect(()=>{
 .card-frame {
     border-top: 1px solid;
     border-radius: 0;
+    min-height: 160px;
 }
 .card-center-frame {
     width: 100%;
-    height: 150px;
+    min-height: 150px;
     margin: 5px 0;
     padding: 5px;
     border-left: none;
@@ -67,6 +67,33 @@ watchEffect(()=>{
     border-radius: 0;
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    .card-frame {
+        min-height: 110px;
+    }
+    .card-center-frame {
+        min-height: 100px;
+        gap: 8px;
+    }
+    .card-left-frame {
+        gap: 4px;
+    }
+    .card-left-frame :deep(.text-h6) {
+        font-size: 1rem !important;
+        line-height: 1.25;
+    }
+    .card-bottom-frame {
+        font-size: 0.78em;
+        flex-wrap: wrap;
+    }
+    .card-right-frame {
+        width: auto;
+        min-width: 50px;
+        font-size: 0.85em;
+        gap: 4px;
+    }
 }
 /*카드 본문 내용(왼쪽)*/
 .card-left-frame {

@@ -228,4 +228,36 @@ onMounted(async () =>{
     background-color: #BEADFA;
     color: #ffffff;
 }
+
+@media (max-width: 600px) {
+    .search-frame {
+        width: 100%;
+    }
+    .notice-table-container {
+        overflow-x: auto;
+    }
+    .notice-table {
+        height: auto;
+        font-size: 0.85em;
+    }
+    .notice-table th,
+    .notice-table td {
+        padding: 6px 4px;
+        white-space: nowrap;
+    }
+    .notice-table td:first-child {
+        white-space: normal;
+        text-align: left;
+        max-width: 160px;
+    }
+    .pagination-list {
+        flex-wrap: wrap;
+    }
+    .pagination-list li {
+        margin: 0 2px;
+    }
+    .pagination-list button {
+        padding: 4px 8px;
+    }
+}
 </style>

@@ -240,4 +240,27 @@ const delBoardReply=()=>{
 .re-reply-card-body{
     padding-left: 15px;
 }
+
+@media (max-width: 600px) {
+    .card-reply,
+    .rereply-list-frame {
+        width: 100%;
+        margin: 4px 0;
+    }
+    .card-header {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .reply-edit-btns {
+        margin-left: auto;
+    }
+    .reply-edit-btns :deep(.v-btn) {
+        min-width: 48px;
+        padding: 0 8px;
+        font-size: 0.78rem;
+    }
+    .card-header :deep(.v-btn) {
+        padding: 0 10px;
+    }
+}
 </style>

@@ -81,7 +81,7 @@ const loading = ref(false);
 const searchText = ref("");
 const drawer = ref(false);
 const goToMymage = async () =>{
-  await api('api/getUserId','get').then(res => {
+  await api('getUserId','get').then(res => {
     router.push(`/mypage/userinfo/${res}`);
   });
 }

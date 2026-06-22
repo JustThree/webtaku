@@ -122,7 +122,7 @@ const updateUserInfo = () => {
   if(newNickname.value != "" && !(check.value.nickCheck)){
     alert("닉네임 중복체크를 완료해주세요")
   }else {
-    axios.put(`${apiBase()}/mypage/update`, formData,{
+    axios.put(`${apiBase()}/api/mypage/update`, formData,{
       headers:{
         'Content-Type': 'multipart/form-data',
       },

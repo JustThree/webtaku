@@ -62,17 +62,26 @@ public class SecurityConfig {
 //                                .requestMatchers("/**").permitAll()
                                 //공통으로 허용되는 주소
 
-                                .requestMatchers(HttpMethod.GET,"/index.html","/assets/**","/error","/api/reset-password","/board/**","/board/notice",
-                                        "/api/check-nickname","/api/check-nickname","/api/auth/accessoken"
-                                        ,"/chat/**","/chats/**","/ws/**","/webtoon/**","/mypage/userinfo/**","/mypage/follow/**","/mypage/reviewed/**","/mypage/interested/**").permitAll()
-                                .requestMatchers(HttpMethod.POST,"/api/join","/api/verify-code","/api/logout","/api/email-verification").permitAll()
-                                .requestMatchers(HttpMethod.PUT,"/reset-password").permitAll()
+                                .requestMatchers(HttpMethod.GET,
+                                        "/", "/index.html", "/assets/**", "/error", "/vite.svg",
+                                        "/ws/**",
+                                        "/api/reset-password", "/api/check-nickname", "/api/auth/accessoken",
+                                        "/api/board/**", "/api/board/notice",
+                                        "/api/chats/**",
+                                        "/api/webtoon/**",
+                                        "/api/mypage/userinfo/**", "/api/mypage/follow/**",
+                                        "/api/mypage/reviewed/**", "/api/mypage/interested/**"
+                                ).permitAll()
+                                .requestMatchers(HttpMethod.POST,
+                                        "/api/join", "/api/verify-code", "/api/logout", "/api/email-verification"
+                                ).permitAll()
+                                .requestMatchers(HttpMethod.PUT, "/api/reset-password").permitAll()
                                 //권한 처리하는 주소
-                                .requestMatchers(HttpMethod.GET,"/admin/**","/admin").hasRole("ADMIN")
-                                .requestMatchers(HttpMethod.POST,"/webtoon/review/**").hasRole("USER")
-                                .requestMatchers(HttpMethod.DELETE,"/board/**").hasRole("USER")
-                                .requestMatchers(HttpMethod.PUT,"/mypage/update").hasAnyRole("USER","ADMIN")
-                                .requestMatchers("/api/getUserList","/api/getUserList/**").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.GET, "/api/admin/**", "/api/admin").hasRole("ADMIN")
+                                .requestMatchers(HttpMethod.POST, "/api/webtoon/review/**").hasRole("USER")
+                                .requestMatchers(HttpMethod.DELETE, "/api/board/**").hasRole("USER")
+                                .requestMatchers(HttpMethod.PUT, "/api/mypage/update").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/api/getUserList", "/api/getUserList/**").hasRole("ADMIN")
                                 .anyRequest().authenticated());
 //                .exceptionHandling(e -> e
 //                        .authenticationEntryPoint(jwtAuthenticationEntryPoint()));

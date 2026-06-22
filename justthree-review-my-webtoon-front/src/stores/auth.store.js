@@ -60,7 +60,7 @@ export const useAuthStore = defineStore('auth', () => {
     }
     async function logout(){
         let userEmail = await getTokenkey(user);
-        await api(`api/logout`,'POST',{"usersEmail" : `${userEmail.value}`});
+        await api(`logout`,'POST',{"usersEmail" : `${userEmail.value}`});
         user.value = null;
         localStorage.removeItem('user');
         router.push('/');

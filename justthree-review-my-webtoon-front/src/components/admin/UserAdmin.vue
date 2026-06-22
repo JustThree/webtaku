@@ -108,7 +108,7 @@ onMounted(() => {
 });
 
 async function getUserList(){
-  await api(`api/getUserList?page=${page.value -1}`, "GET").then(r => {
+  await api(`getUserList?page=${page.value -1}`, "GET").then(r => {
     console.log(`api/getUserList?page=${page.value -1}`);
     console.log(r);
     userList.value = r.content;
@@ -132,7 +132,7 @@ watch(
 
 function deleteUser(userId){
   if(confirm("회원을 비활성화 하시겠습니까?")){
-    api('api/deleteUser','POST',userId).then(() => {
+    api('deleteUser','POST',userId).then(() => {
       alert("비활성화 되었습니다.");
       getUserList();
     }).catch(() =>{
@@ -144,7 +144,7 @@ function deleteUser(userId){
 // 페이지네이션
 const fetchData = async () => {
   try {
-    const response = await api(`api/getUserList?page=${page.value-1}&type=${typeObj[queryString.value.type]}&search=${searchVal.value}`
+    const response = await api(`getUserList?page=${page.value-1}&type=${typeObj[queryString.value.type]}&search=${searchVal.value}`
         , "GET").then(r => {
           console.log(r);
       userList.value = r.content;

@@ -19,7 +19,7 @@ const wsBase = () => {
 };
 
 const apiToken = async (urn, method, data, token) => {
-    const url = `${apiBase()}/${urn}`;
+    const url = `${apiBase()}/api/${urn}`;
     return (await axios({
         url,
         method,
@@ -33,7 +33,7 @@ const apiToken = async (urn, method, data, token) => {
     })).data
 }
 const api = async (urn, method, data) => {
-    const url = `${apiBase()}/${urn}`;
+    const url = `${apiBase()}/api/${urn}`;
     return (await axios({
         method: method,
         url,

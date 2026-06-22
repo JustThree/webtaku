@@ -96,7 +96,7 @@ const searchItems = ref([]);
 watch(searchWord, () => {
   console.log(searchWord)
   if(searchWord.value.length >= 2){
-    api(`api/webtoon/search?type=1&word=${searchWord.value}&size=5`, "GET")
+    api(`webtoon/search?type=1&word=${searchWord.value}&size=5`, "GET")
         .then(resp => {
           searchItems.value = resp;
         })

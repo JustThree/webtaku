@@ -47,7 +47,7 @@ export function setupAxiosInterceptors(store){
             store.logout();
         }else if(errResStatus === 406 && !isRefreshing.value){
             isRefreshing.value = true;
-            api("api/auth/accessoken", 'get', '').then(r  => {
+            api("auth/accessoken", 'get', '').then(r  => {
                 user.value.accessToken = "Bearer " + r.toString();
 
                 localStorage.removeItem('user');

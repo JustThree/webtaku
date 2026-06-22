@@ -12,7 +12,7 @@
   // })
 
   const getUserInfo = async () => {
-    await api("api/tui",'GET').then(result => {
+    await api("tui",'GET').then(result => {
       userEmail.value = result.usersEmail;
 
     })

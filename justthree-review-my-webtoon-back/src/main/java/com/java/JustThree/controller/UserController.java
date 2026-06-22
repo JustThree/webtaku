@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(value = "/api")
 @Slf4j
 public class UserController {
 

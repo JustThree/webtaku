@@ -82,7 +82,7 @@ const goBack = () => {
 };
 
 // /////////////////////////////////////////////////////로그인 한 사람 아이디 = followerId
-api(`api/getUserId`, "GET", {
+api(`getUserId`, "GET", {
 }).then((response) => {
       resp = response;
       console.log(resp);

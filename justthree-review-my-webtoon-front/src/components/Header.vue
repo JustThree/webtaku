@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-toolbar class="header-toolbar mx-auto" color="white" height="80">
+    <v-toolbar class="header-toolbar mx-auto" height="80">
 
       <v-app-bar-nav-icon
           class="d-md-none"
@@ -33,6 +33,9 @@
               @click:append-inner="onClick"
           ></v-text-field>
         </div>
+        <v-btn icon variant="text" @click="toggleTheme" :title="isDark ? '라이트 모드' : '다크 모드'">
+          <v-icon>{{ isDark ? 'mdi-weather-sunny' : 'mdi-weather-night' }}</v-icon>
+        </v-btn>
         <v-btn class="d-none d-md-flex" v-if="!user" href="/user/login">
           로그인
         </v-btn>
@@ -69,17 +72,26 @@
 
 </template>
 <script setup>
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import {api} from "@/common.js";
 import {useAuthStore} from "@/stores/auth.store.js";
 import {storeToRefs} from "pinia";
 import router from "@/router/index.js";
+import {useTheme} from "vuetify";
 
 const authStore = useAuthStore()
 const { user } = storeToRefs(authStore);
 const loading = ref(false);
 const searchText = ref("");
 const drawer = ref(false);
+
+const theme = useTheme();
+const isDark = computed(() => theme.global.current.value.dark);
+const toggleTheme = () => {
+  const next = isDark.value ? 'light' : 'dark';
+  theme.global.name.value = next;
+  localStorage.setItem('theme', next);
+};
 const goToMymage = async () =>{
   await api('getUserId','get').then(res => {
     router.push(`/mypage/userinfo/${res}`);

@@ -164,6 +164,7 @@ fetchData()
               <v-img
                   :src="item.imgUrl"
                   class="webtoon-thumb-square"
+                  :aspect-ratio="1"
                   alt="https://vuetifyjs.com/en/"
                   cover="true"
               >

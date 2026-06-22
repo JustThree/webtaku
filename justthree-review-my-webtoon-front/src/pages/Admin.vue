@@ -39,7 +39,6 @@
   text-align: center;
   display : flex;
   flex-direction : column;
-  background-color: white;
   border-radius : 30px;
   padding-top: 30px;
   box-shadow: 0px 0px 13px 1px #888888;
@@ -68,7 +67,7 @@
 }
 a{
   text-decoration:none;
-  color : black;
+  color: inherit;
 }
 
 @media (max-width: 960px) {

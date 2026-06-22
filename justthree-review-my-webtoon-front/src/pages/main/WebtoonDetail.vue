@@ -402,9 +402,7 @@ function submitReview() {
           style="display: flex;
           flex-direction: column;"
       >
-        <v-container class="bg-blue-grey-lighten-0"
-                     style="background: #FFFFFF"
-        >
+        <v-container>
 
           <v-row>
             <v-col v-if="reviewData.length===0">
@@ -422,9 +420,7 @@ function submitReview() {
 
               <v-sheet
               >
-                <v-card style="
-                   background: #F2F2F2;"
-                >
+                <v-card>
                   <v-container>
                     <v-row class="align-items-center">
                       <v-col class="v-col-12">

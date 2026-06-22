@@ -9,7 +9,6 @@ div#profileimg {
 
 }
 body{
-    background-color: #F5F5F5;
     text-align: -webkit-center;
 }
 #userPic img {
@@ -20,7 +19,6 @@ body{
 a {
     margin-left: 5px;
     margin-right: 8px;
-        color: black;
         text-decoration: none;
 }
 #myInfoLayout{
@@ -42,7 +40,6 @@ a {
     /*background: lightgray 50% / cover no-repeat;*/
 }
 div#currentUser {
-    color: #000;
     text-align: center;
     font-size: 40px;
     font-style: normal;
@@ -141,11 +138,9 @@ button.btn.btn-primary.btn-block {
     border-color: aliceblue;
 }
 .link-text {
-    color: black; /* 부모 요소의 텍스트 색상 상속 */
-    text-decoration: none; /* 밑줄 제거 */
+    text-decoration: none;
 }
 .nav_text{
-    color: black;
     text-decoration: none;
 }
 

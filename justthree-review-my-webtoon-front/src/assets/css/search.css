@@ -9,7 +9,7 @@ body{
     margin:auto;
 }
 .no-color-line{
-    color:black;
+    color: inherit;
     text-decoration:none;
 }
 .search-item-text {

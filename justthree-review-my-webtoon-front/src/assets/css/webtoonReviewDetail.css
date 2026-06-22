@@ -3,7 +3,7 @@
     font-size: 0.8em;
 }
 .no-color-line{
-    color:black;
+    color: inherit;
     text-decoration:none;
 }
 .top-user-info{

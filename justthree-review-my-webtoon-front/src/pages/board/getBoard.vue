@@ -385,10 +385,6 @@ onMounted(async () =>{
     align-items: center;
     justify-content: center;
     align-content: center;
-    background-color:  #ffffff;
-}
-::v-deep .v-carousel__controls {
-    background: #ffffff;
 }
 ::v-deep .v-carousel__controls .v-carousel__control-dots{
     background: #7B68EE;

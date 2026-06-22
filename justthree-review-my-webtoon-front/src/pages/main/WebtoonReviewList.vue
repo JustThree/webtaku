@@ -148,7 +148,6 @@ fetchData()
     >
       <v-card
           class="ma-10 justify-center review-list-card"
-          style="background: #F7F2FA"
           min-height="200px"
       >
           <v-row
@@ -166,7 +165,6 @@ fetchData()
                            class="no-color-line">
                 <span
                     class="ml-4 font-weight-bold"
-                    style="color:black"
                     v-text="item.userNickName">
                 </span>
               </router-link>

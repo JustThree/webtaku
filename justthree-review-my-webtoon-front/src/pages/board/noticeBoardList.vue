@@ -217,12 +217,13 @@ onMounted(async () =>{
 }
 .pagination-list button {
     padding: 5px 10px;
-    background-color: #ffffff;
+    background-color: transparent;
+    color: inherit;
     border: none;
     cursor: pointer;
 }
 .pagination-list button:hover {
-    background-color: #bdbdbd;
+    background-color: rgba(125, 125, 125, 0.2);
 }
 .pagination-list button.active {
     background-color: #BEADFA;

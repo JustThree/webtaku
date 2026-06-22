@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-5" style="background-color:#F5F5F5">
+  <div class="pa-5">
     <v-card class="chat-list-card my-13 pa-5" rounded="xl">
 
       <v-tabs bg-color="" show-arrows slider-color="purple-lighten-4" align-tabs="center" v-model="page">

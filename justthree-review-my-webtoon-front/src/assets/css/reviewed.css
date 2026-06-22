@@ -21,7 +21,6 @@ div#section {
     flex-shrink: 0;
     align-content: stretch;
     margin-bottom: 62px;
-    background-color: #F7F2FA;
 }
 div#review_uppercontent {
     display: flex;

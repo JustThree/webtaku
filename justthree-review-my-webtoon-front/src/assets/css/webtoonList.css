@@ -9,7 +9,7 @@
     margin-right: auto;
 }
 .no-color-line{
-    color : black;
+    color: inherit;
     text-decoration: none;
 }
 

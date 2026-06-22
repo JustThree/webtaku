@@ -27,8 +27,8 @@ const title = props.title;
             class="no-underline"
             :to="'/webtoon/' + itemWebtoon.masterId">
         <v-card
-          class="elevation-0 webtoon-card"
-            :class="['ma-4', selectedClass]"
+          class="elevation-0 webtoon-card ma-4"
+            :class="[selectedClass]"
         >
           <div class="webtoon-thumb">
           <v-img
@@ -118,11 +118,12 @@ h2 {
 }
 
 @media (max-width: 600px) {
-  .webtoon-card {
-    width: 120px;
+  .webtoon-card.ma-4 {
+    width: 100px;
+    margin: 4px !important;
   }
   .webtoon-thumb {
-    height: 180px;
+    height: 150px;
   }
   h2 {
     font-size: 1.1rem;
@@ -131,11 +132,12 @@ h2 {
 }
 
 @media (max-width: 400px) {
-  .webtoon-card {
-    width: 100px;
+  .webtoon-card.ma-4 {
+    width: 90px;
+    margin: 3px !important;
   }
   .webtoon-thumb {
-    height: 150px;
+    height: 135px;
   }
 }
 </style>

@@ -80,8 +80,6 @@ button#changeimgbtn {
     flex-direction: column; /* 컨텐츠를 세로로 나열하도록 설정 */
 }
 label {
-    color: #000;
-    font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;

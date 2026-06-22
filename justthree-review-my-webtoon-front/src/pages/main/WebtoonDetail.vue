@@ -209,10 +209,8 @@ function submitReview() {
         </div>
         <v-card
             class="mid-info-wrap"
-            height="100%"
         >
           <v-card
-              height="30%"
               class="mid-rating-row"
           >
             <v-rating
@@ -322,9 +320,7 @@ function submitReview() {
             </v-card>
           </v-card>
           <v-card
-              height="75%"
-              style="
-            min-height: 500px;"
+              style="min-height: 500px;"
           >
             <div id="outline"
                  class="outline"

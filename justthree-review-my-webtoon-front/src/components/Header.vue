@@ -128,7 +128,7 @@ function navigate(fn) {
 }
 
 .header-toolbar {
-  width: 75%;
+  width: 92%;
 }
 .header-logo {
   cursor: pointer;

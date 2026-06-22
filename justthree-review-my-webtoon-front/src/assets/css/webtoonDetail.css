@@ -50,6 +50,10 @@
     align-items: center;
     justify-content: center;
 }
+.mid-info-card .v-col {
+    padding: 8px 4px;
+    min-width: 0;
+}
 .mid-row-rating-num{
     font-weight: bold;
     font-size: 2em;

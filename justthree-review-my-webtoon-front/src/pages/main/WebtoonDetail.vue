@@ -240,7 +240,7 @@ function submitReview() {
                   </v-col>
                   <v-col class="flex-column" style="text-align: center">
                     <v-icon
-                        size="64"
+                        size="48"
                         icon="mdi-plus-box"
                         @click="interestAdd"
                         :color="data.isAddInterest==false ? 'gray' : 'red'"
@@ -254,7 +254,7 @@ function submitReview() {
                         <v-icon
                             v-bind="props"
                             color="gray "
-                            size="64"
+                            size="48"
                             icon="mdi-grease-pencil"
                         ></v-icon>
                       </template>
@@ -293,7 +293,7 @@ function submitReview() {
                     >
                       <v-icon
                           color="gray"
-                          size="64"
+                          size="48"
                           icon="mdi-wechat"
                           style="justify-content: center"
                       ></v-icon>
@@ -512,5 +512,7 @@ function submitReview() {
 <style scoped>
 @import "@/assets/css/webtoonDetail.css";
 
-
+.rating :deep(.v-rating__item) {
+  margin: 0 6px;
+}
 </style>

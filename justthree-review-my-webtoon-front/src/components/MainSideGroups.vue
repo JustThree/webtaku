@@ -45,11 +45,11 @@ const title = props.title;
           </v-img>
           </div>
           <div
+              class="webtoon-title"
               v-text="itemWebtoon.title"
-              style="font-weight: 600;"
           ></div>
           <div
-              style="font-size:0.8em"
+              class="webtoon-writer"
               v-text="itemWebtoon.writer"
           ></div>
           <div class="d-flex fill-height align-center justify-center">
@@ -106,6 +106,18 @@ h2 {
 }
 .webtoon-thumb {
   height: 300px;
+}
+.webtoon-title {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.webtoon-writer {
+  font-size: 0.8em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 960px) {

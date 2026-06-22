@@ -6,7 +6,7 @@ import ChatInfo  from "@/components/chat/ChatInfo.vue";
 
 <template>
 
-    <body style="text-align: -webkit-center; height: 100%;">
+    <div style="text-align: -webkit-center; height: 100%;">
 <!--        <v-card position="relative" rounded="xl" class="w-66 my-13 pa-15" height="700">-->
 <!--            <ChatInfo :masterId="$route.params.masterId"></ChatInfo>-->
 <!--            <ChatDetail :masterId="$route.params.masterId"></ChatDetail>-->
@@ -15,7 +15,7 @@ import ChatInfo  from "@/components/chat/ChatInfo.vue";
   <ChatInfo :masterId="$route.params.masterId"></ChatInfo>
   <ChatDetail :masterId="$route.params.masterId"></ChatDetail>
 </div>
-    </body>
+    </div>
 </template>
 <style scoped>
 @import "@/assets/css/chat.css";

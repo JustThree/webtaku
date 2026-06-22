@@ -1,5 +1,5 @@
 <template>
-  <body >
+  <div >
   <v-layout class="mx-8" style="text-align:left">
     <v-icon icon="mdi-account" color="rgb(128,128,128)" @click.stop="drawer = !drawer"></v-icon>
     {{ getParticipants.length }}
@@ -16,7 +16,7 @@
             <div class="text-caption d-flex align-end mr-2" style="color:rgb(128,128,128)">
               {{ createdDiff(item.created) }}
             </div>
-            <v-card class="d-flex pa-4" min-height="40" max-width="300" color="#FFF8C9">
+            <v-card class="d-flex pa-4" min-height="40" max-width="300" color="#FFF8C9" theme="light">
               <div class="align-self-center text-body-2 text-left"> {{ item.contents }}</div>
             </v-card>
           </div>
@@ -33,7 +33,7 @@
           <div class="mx-2">
             <div class="text-subtitle-2 font-weight-bold text-left mb-1"> {{ item.senderNickname }}</div>
             <div class="d-flex">
-              <v-card class="d-flex pa-4 " min-height="40" max-width="300" color="#DFCCFB">
+              <v-card class="d-flex pa-4 " min-height="40" max-width="300" color="#DFCCFB" theme="light">
                 <div class="align-self-center text-body-2 text-left"> {{ item.contents }}</div>
               </v-card>
               <div class="text-caption d-flex align-end ml-2" style="color:rgb(128,128,128)">
@@ -100,7 +100,7 @@
 
 </v-navigation-drawer>
     </v-layout>
-  </body>
+  </div>
 </template>
 <style scoped>
 .chat-msg-container {

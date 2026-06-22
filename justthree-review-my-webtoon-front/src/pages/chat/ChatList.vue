@@ -3,9 +3,9 @@ import ChatList from '@/components/chat/ChatList.vue';
 </script>
 
 <template>
-  <body style="text-align: -webkit-center; ">
+  <div style="text-align: -webkit-center; ">
     <ChatList :page="page" @page-change="handlePageChange"/>
-    </body>
+    </div>
 </template>
 
 

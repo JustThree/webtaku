@@ -127,11 +127,8 @@ fetchData()
   >
     <v-container
     >
-      <v-row
-      >
-        <v-col
-            class="v-col-3"
-        >
+      <v-row class="justify-center">
+        <v-col cols="6" sm="3">
       <v-select
           v-model="queryString.order"
           label="정렬"
@@ -140,9 +137,7 @@ fetchData()
       >
       </v-select>
         </v-col>
-        <v-col
-            class="v-col-3"
-        >
+        <v-col cols="6" sm="3">
           <v-select
               v-model="queryString.genre"
               label="장르"

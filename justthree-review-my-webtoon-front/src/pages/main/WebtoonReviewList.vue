@@ -70,7 +70,6 @@ fetchData()
 
 <template>
   <v-card
-      class="v-col-md-12"
       style="
       position: relative;
       height: 100px;"

@@ -25,19 +25,19 @@ for (const idx in apiList) {
 
 <template>
   <div>
-    <main-side-groups :title="'최근 연재 시작한 웹툰'" :webtoons="data[0]" :color="'white'"></main-side-groups>
+    <main-side-groups :title="'최근 연재 시작한 웹툰'" :webtoons="data[0]"></main-side-groups>
   </div>
   <div>
-    <main-side-groups :title="'인기있는'" :webtoons="data[1]" :color="'white'"></main-side-groups>
+    <main-side-groups :title="'인기있는'" :webtoons="data[1]"></main-side-groups>
   </div>
   <div>
-    <main-side-groups :title="'최근 완결 웹툰'" :webtoons="data[2]" :color="'white'"></main-side-groups>
+    <main-side-groups :title="'최근 완결 웹툰'" :webtoons="data[2]"></main-side-groups>
   </div>
   <div>
-    <main-side-groups :title="'#판타지'" :webtoons="data[3]" :color="'white'"></main-side-groups>
+    <main-side-groups :title="'#판타지'" :webtoons="data[3]"></main-side-groups>
   </div>
   <div>
-    <main-side-groups :title="'#로맨스'" :webtoons="data[4]" :color="'white'"></main-side-groups>
+    <main-side-groups :title="'#로맨스'" :webtoons="data[4]"></main-side-groups>
   </div>
 
 </template>

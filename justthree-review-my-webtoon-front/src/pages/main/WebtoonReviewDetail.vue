@@ -235,9 +235,7 @@ function copyToClipboard() {
 </script>
 
 <template>
-  <v-card
-      class="v-col-md-12"
-  >
+  <v-card>
     <v-btn
         style="margin-left: 2%"
         icon="mdi-arrow-left"

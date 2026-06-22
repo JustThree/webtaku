@@ -1,1 +1,7 @@
 /* 글로벌 폰트/배경은 Vuetify 테마 + App.vue에서 처리 */
+
+/* Mac overscroll(고무줄 스크롤) 시 흰 띠 방지 — Vuetify 테마 배경 변수를 html/body에도 적용 */
+html,
+body {
+    background-color: rgb(var(--v-theme-background));
+}

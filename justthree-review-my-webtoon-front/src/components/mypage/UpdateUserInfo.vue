@@ -52,7 +52,7 @@ const { user } = useAuthStore()
 const checkNickNameUrl = apiBase() + import.meta.env.VITE_CHECK_NICKNAME_API_PATH;
 
 
-const userProfileImageUrl = "@/assets/images/blackDUK.png";
+const userProfileImageUrl = "@/assets/images/blackDUK-removebg-preview.png";
 const selectedFile = ref([]);
 const newNickname = ref("");
 const nicknameAvailabilityMsg = ref("");

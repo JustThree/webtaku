@@ -7,7 +7,7 @@
           @click="drawer = !drawer"
       ></v-app-bar-nav-icon>
 
-      <img alt="logo" src="@/assets/images/blackDUK.png" class="header-logo" @click="$router.push('/')">
+      <img alt="logo" src="@/assets/images/blackDUK-removebg-preview.png" class="header-logo" @click="$router.push('/')">
 
       <v-toolbar-title class="ml-2 d-none d-md-block">
         <v-btn @click="moveWebtoon"> 웹툰 </v-btn>

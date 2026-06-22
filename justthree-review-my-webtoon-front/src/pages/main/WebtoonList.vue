@@ -107,8 +107,7 @@ fetchData()
 
 </script>
 <template>
-  <v-card
-      class="v-col-md-12">
+  <v-card>
     <router-link :to="'/'">
       <v-btn
           style="margin-left: 2%"

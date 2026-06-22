@@ -1,7 +1,7 @@
 <template>
   <div id="bodywapper" class="d-flex">
     <aside class="aside1">
-      <div id="adminPic"><img src="@/assets/images/blackDUK.png" alt=""></div>
+      <div id="adminPic"><img src="@/assets/images/blackDUK-removebg-preview.png" alt=""></div>
       <h1>관리자</h1>
         <v-list
             density="compact"

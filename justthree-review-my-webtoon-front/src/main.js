@@ -26,11 +26,12 @@ import { setupAxiosInterceptors } from './axiosHandler.js';
 import VueClipboard from "vue-clipboard3";
 
 const app = createApp(App);
+const savedTheme = (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) || 'dark';
 const vuetify = createVuetify({
     components,
     directives,
     theme: {
-        defaultTheme: 'light',
+        defaultTheme: savedTheme,
         themes: {
             light: {
                 primary: colors.purple,

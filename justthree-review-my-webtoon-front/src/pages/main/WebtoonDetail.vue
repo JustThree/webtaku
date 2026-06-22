@@ -151,9 +151,7 @@ function submitReview() {
 
 </script>
 <template>
-  <v-card
-      class="v-col-md-12"
-  >
+  <v-card>
     <v-btn
         style="margin-left: 2%"
         icon="mdi-arrow-left"
@@ -197,8 +195,7 @@ function submitReview() {
       <v-card
           class="flex align-items-center mx-auto mid-content-card"
           width="100%"
-          min-height="600px"
-          color=#F8F8F8>
+          min-height="600px">
         <div class="mid-thumb-wrap">
           <v-img
               class="mid-thumb-img"
@@ -269,7 +266,6 @@ function submitReview() {
                           <v-textarea
                               v-model="reviewContent"
                               class="p-5"
-                              bg-color=#F2F2F2
                               placeholder="(글자수 5~200자)"
                           >
                           </v-textarea>

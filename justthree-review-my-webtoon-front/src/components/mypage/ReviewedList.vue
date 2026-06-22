@@ -22,7 +22,7 @@
           <v-col v-for="review in reviewed.values" id="section">
         <div id="review_uppercontent">
           <v-avatar size="24" id="profileimg">
-            <img src="@/assets/images/blackDUK.png" alt="profileimg" style="width: 100%">
+            <img src="@/assets/images/blackDUK-removebg-preview.png" alt="profileimg" style="width: 100%">
           </v-avatar>
           <div id="nickname">{{review.usersNickname}}</div>
         </div>

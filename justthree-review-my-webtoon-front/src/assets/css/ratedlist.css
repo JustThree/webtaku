@@ -48,3 +48,24 @@
     display: block;
     cursor: pointer;
 }
+
+@media (max-width: 600px) {
+    #thumbnail {
+        width: 80px;
+        height: 116px;
+    }
+    #title {
+        font-size: 16px;
+        margin-left: 10px;
+        line-height: 22px;
+    }
+    #ratedtoon {
+        margin-left: 8px;
+    }
+    #titletext {
+        font-size: 14px;
+    }
+    #tooninfo {
+        font-size: 12px;
+    }
+}

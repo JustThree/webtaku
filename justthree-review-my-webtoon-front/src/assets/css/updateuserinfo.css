@@ -96,3 +96,50 @@ input#nickname {
     align-items: center;
     flex-shrink: 0;
 }
+
+@media (max-width: 960px) {
+    #myInfoLayout {
+        width: 95%;
+        height: auto;
+    }
+    #updateUserInfoForm_layout {
+        margin-top: 16px;
+    }
+    form {
+        margin-top: 30px;
+    }
+    #userPic {
+        width: 130px;
+        height: 130px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+    }
+    small#nicknameMsg {
+        margin-left: 0;
+        margin-top: 8px;
+        display: block;
+        text-align: left;
+    }
+    input#nickname {
+        width: 100%;
+        max-width: 375px;
+    }
+    button#changeimgbtn {
+        width: 80%;
+        max-width: 250px;
+        height: 44px;
+    }
+    #layoutuppercontent {
+        flex-direction: column;
+    }
+    div#changeimgtxt {
+        font-size: 16px;
+    }
+    button.v-btn.v-btn--elevated.v-theme--light.v-btn--density-default.v-btn--size-default.v-btn--variant-elevated.vaildateBtn.basicBtnColor {
+        margin-left: 4px;
+    }
+    button.v-btn.v-btn--block.v-btn--elevated.v-theme--light.v-btn--density-default.v-btn--size-large.v-btn--variant-elevated.mb-8 {
+        margin-top: 24px;
+    }
+}

@@ -193,5 +193,55 @@ button.btn.btn-primary.btn-block {
 /*border: 1px solid #D9D9D9;*/
 /*transform: rotate(90deg);*/
 
-
-
+@media (max-width: 960px) {
+    #myInfoLayout {
+        width: 95% !important;
+        height: auto;
+        margin-top: 20px !important;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15);
+    }
+    div#profileimg {
+        margin-top: 24px;
+    }
+    #userPic, #adminPic {
+        margin-top: 24px;
+        width: 140px;
+        height: 140px;
+    }
+    div#currentUser {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    div#currentUserEmail {
+        margin-top: 12px;
+        width: auto;
+        height: auto;
+        font-size: 14px;
+    }
+    .followerInfo {
+        width: auto;
+        height: auto;
+        margin-top: 16px;
+        font-size: 15px;
+    }
+    div#userInfoChart {
+        margin-top: 24px;
+        margin-bottom: 20px;
+    }
+    div#usertext {
+        margin-top: 16px;
+        width: auto;
+        height: auto;
+        font-size: 16px;
+    }
+    .infoChartTitle {
+        margin-left: 6px;
+        margin-right: 6px;
+        font-size: 0.9em;
+    }
+    button.btn.btn-primary.btn-block {
+        width: 90%;
+        height: 44px;
+        font-size: 15px;
+    }
+}

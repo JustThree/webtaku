@@ -25,6 +25,7 @@
         height: auto;
         padding-left: 4px;
         padding-right: 4px;
+        display: block;
     }
     .top-header-text {
         margin: 0 0 0 12px;
@@ -36,6 +37,10 @@
     .main-container .v-container {
         padding-left: 4px;
         padding-right: 4px;
+    }
+    .main-container .v-row {
+        margin-left: 0;
+        margin-right: 0;
     }
     .main-container .v-col-4,
     .main-container .v-col-12 {

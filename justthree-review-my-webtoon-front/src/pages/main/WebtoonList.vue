@@ -127,7 +127,7 @@ fetchData()
   >
     <v-container
     >
-      <v-row class="justify-center">
+      <v-row class="justify-end">
         <v-col cols="6" sm="3">
       <v-select
           v-model="queryString.order"

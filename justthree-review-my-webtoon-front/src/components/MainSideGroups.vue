@@ -10,7 +10,7 @@ const title = props.title;
       max-width="1285"
       :color="color"
   >
-    <h2 class="ml-5 pt-5  pl-15"
+    <h2 class="ml-5 pl-15"
         v-text="title"></h2>
     <v-slide-group
         class="pl-5 slide-fade"
@@ -92,7 +92,8 @@ const title = props.title;
 </template>
 <style scoped>
 h2 {
-  padding: 10px 0 0 10px;
+  padding: 4px 0 0 10px;
+  font-size: 1.3rem;
 }
 .no-underline{
   text-decoration: none;
@@ -102,10 +103,10 @@ h2 {
 }
 
 .webtoon-card {
-  width: 200px;
+  width: 170px;
 }
 .webtoon-thumb {
-  height: 300px;
+  height: 255px;
 }
 .webtoon-title {
   font-weight: 600;

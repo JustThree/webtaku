@@ -47,7 +47,7 @@ for (const idx in apiList) {
 
 <style scoped >
 div {
-  margin: 20px 0 20px 0;
+  margin: 4px 0;
 }
 
 /* 스타일 작성 */

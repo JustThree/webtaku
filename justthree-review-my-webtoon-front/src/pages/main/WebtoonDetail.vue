@@ -228,32 +228,31 @@ function submitReview() {
                   class="align-items-center justify-content-center"
               >
                 <v-row
-                    class="align-items-center justify-content-center">
-                  <v-col>
-                    <div>
-                      <div
-                          class="mid-row-rating-num"
-                          v-text="(data.avgRating/2).toFixed(1)"
-                      >
-                      </div>
-                    </div>
+                    class="align-items-center justify-content-center flex-nowrap">
+                  <v-col cols="3" class="text-center">
+                    <div
+                        class="mid-row-rating-num"
+                        v-text="(data.avgRating/2).toFixed(1)"
+                    ></div>
+                    <div><span style="color:red" v-text="data.countStar"></span>명투표</div>
                   </v-col>
-                  <v-col class="flex-column" style="text-align: center">
+                  <v-col cols="3" class="text-center">
                     <v-icon
                         size="48"
                         icon="mdi-plus-box"
                         @click="interestAdd"
                         :color="data.isAddInterest==false ? 'gray' : 'red'"
                     ></v-icon>
+                    <div>관심등록</div>
                   </v-col>
-                  <v-col class="flex-column" style="text-align: center">
+                  <v-col cols="3" class="text-center">
                     <v-dialog max-width="1000" width="95%" height="800px"
                               scrollable
                     >
                       <template v-slot:activator="{ props }">
                         <v-icon
                             v-bind="props"
-                            color="gray "
+                            color="gray"
                             size="48"
                             icon="mdi-grease-pencil"
                         ></v-icon>
@@ -286,8 +285,9 @@ function submitReview() {
                         </v-card>
                       </template>
                     </v-dialog>
+                    <div>리뷰쓰기</div>
                   </v-col>
-                  <v-col class="flex-column" style="text-align: center">
+                  <v-col cols="3" class="text-center">
                     <router-link :to="'/chat/'+route.params.masterId"
                                  class="no-color-line"
                     >
@@ -295,20 +295,10 @@ function submitReview() {
                           color="gray"
                           size="48"
                           icon="mdi-wechat"
-                          style="justify-content: center"
                       ></v-icon>
                     </router-link>
+                    <div>채팅방</div>
                   </v-col>
-                </v-row>
-                <v-row
-                    class="align-items-center justify-content-center">
-                  <v-col class="v-col-3" style="text-align: center"><span
-                      style="color:red"
-                      v-text="data.countStar"></span>명투표
-                  </v-col>
-                  <v-col class="v-col-3" style="text-align: center">관심등록</v-col>
-                  <v-col class="v-col-3" style="text-align: center">리뷰쓰기</v-col>
-                  <v-col class="v-col-3 " style="text-align: center">채팅방</v-col>
                 </v-row>
               </v-container>
 

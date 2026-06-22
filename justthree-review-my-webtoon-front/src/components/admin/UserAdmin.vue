@@ -191,4 +191,17 @@ const onClick = () => {
     max-width: 200px;
   }
 
+  @media (max-width: 600px) {
+    .itemBox {
+      max-width: 120px;
+    }
+    :deep(.v-table) {
+      font-size: 0.78em;
+    }
+    :deep(.v-table th),
+    :deep(.v-table td) {
+      padding: 6px 4px !important;
+      white-space: nowrap;
+    }
+  }
 </style>

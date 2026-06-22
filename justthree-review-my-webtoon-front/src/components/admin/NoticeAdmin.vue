@@ -195,4 +195,19 @@ tr>:nth-child(6){
 .btnContainer {
   text-align : right;
 }
+
+@media (max-width: 600px) {
+  :deep(.v-table) {
+    font-size: 0.78em;
+  }
+  :deep(.v-table th),
+  :deep(.v-table td) {
+    padding: 6px 4px !important;
+    white-space: nowrap;
+  }
+  tr>:nth-child(2),
+  td>div {
+    max-width: 160px;
+  }
+}
 </style>

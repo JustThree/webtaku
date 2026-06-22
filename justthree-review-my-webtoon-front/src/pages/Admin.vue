@@ -70,4 +70,38 @@ a{
   text-decoration:none;
   color : black;
 }
+
+@media (max-width: 960px) {
+  #bodywapper {
+    flex-direction: column;
+  }
+  .aside1 {
+    float: none;
+    width: auto;
+    height: auto;
+    margin: 12px;
+    padding-top: 16px;
+    border-radius: 16px;
+  }
+  .aside1 :deep(h1) {
+    font-size: 1.4rem;
+    margin: 8px 0;
+  }
+  .aside1 :deep(.v-list) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .aside1 :deep(.v-list-item) {
+    flex: 0 0 auto;
+  }
+  .section1 {
+    width: auto;
+    height: auto;
+    min-height: 50vh;
+    margin: 12px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+}
 </style>

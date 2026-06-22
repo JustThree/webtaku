@@ -1,6 +1,6 @@
 <template>
-  <v-card>
-    <v-toolbar class="header-toolbar mx-auto" height="80">
+  <v-card flat>
+    <v-toolbar class="header-toolbar mx-auto" height="80" flat>
 
       <v-app-bar-nav-icon
           class="d-md-none"

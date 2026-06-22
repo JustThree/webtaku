@@ -201,11 +201,9 @@ function submitReview() {
           color=#F8F8F8>
         <div class="mid-thumb-wrap">
           <v-img
-              style="border-radius: 25px;"
+              class="mid-thumb-img"
               :src="data.imgUrl"
-              height="300px"
               :cover=true
-
           >
           </v-img>
         </div>
@@ -420,8 +418,10 @@ function submitReview() {
               </v-sheet>
             </v-col>
             <v-col v-for="(itemCol,idxCol) in reviewData"
-                   cols="4"
-                   style="min-width:300px;border-radius: 15px;"
+                   cols="12"
+                   sm="6"
+                   md="4"
+                   class="review-card-col"
             >
 
               <v-sheet

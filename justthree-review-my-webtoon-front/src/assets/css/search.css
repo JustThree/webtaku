@@ -12,3 +12,19 @@ body{
     color:black;
     text-decoration:none;
 }
+.search-item-text {
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 4px;
+}
+
+@media (max-width: 960px) {
+    .main-card {
+        width: 100%;
+    }
+    .search-item-text {
+        font-size: 0.85em;
+    }
+}

@@ -125,17 +125,18 @@ type = 1
             <v-col
                 v-for="(item,idx) in content[n]"
                 :key="idx"
-                cols="12"
-                md="4"
+                cols="6"
+                sm="4"
+                md="3"
             ><router-link :to="type===4 ? 'mypage/userinfo/' + item.masterId : 'webtoon/' + item.masterId"
                           class="no-color-line"
             >
               <v-img
                   :src="item.imgUrl"
-                  aspect-ratio="1"
+                  :aspect-ratio="1"
                   cover="true"
               ></v-img>
-              <div
+              <div class="search-item-text"
               v-text="item.title + '/' + item.writer">
               </div>
             </router-link>

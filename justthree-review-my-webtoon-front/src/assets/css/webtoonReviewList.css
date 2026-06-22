@@ -18,3 +18,22 @@
     top: 30%;
     right: 5%;
 }
+
+.review-list-card {
+    width: 40%;
+}
+
+@media (max-width: 960px) {
+    .review-list-card {
+        width: 95%;
+        margin: 16px !important;
+    }
+    .top-header-text {
+        font-size: 1.3em;
+        right: auto;
+        left: 60px;
+    }
+    .review-btn {
+        right: 3%;
+    }
+}

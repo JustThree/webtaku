@@ -87,7 +87,7 @@ fetchData()
     >
     리뷰
   </span>
-    <v-dialog width="1000" height="800px"
+    <v-dialog max-width="1000" width="95%" height="800px"
               transition="false"
     >
       <template v-slot:activator="{ props }">
@@ -147,9 +147,8 @@ fetchData()
            class="justify-center"
     >
       <v-card
-          class="ma-10 justify-center"
+          class="ma-10 justify-center review-list-card"
           style="background: #F7F2FA"
-          width="40%"
           min-height="200px"
       >
           <v-row

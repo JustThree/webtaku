@@ -279,7 +279,7 @@ function copyToClipboard() {
               <span
                   class="offset-9 v-col 3"
               >
-                <v-dialog width="1000" height="800px">
+                <v-dialog max-width="1000" width="95%" height="800px">
             <template v-slot:activator="{ props }">
 
                 <v-btn
@@ -396,7 +396,7 @@ function copyToClipboard() {
         </v-col>
         <v-col>
 
-          <v-dialog width="1000" height="800px">
+          <v-dialog max-width="1000" width="95%" height="800px">
             <template v-slot:activator="{ props }">
               <v-btn
                   elevation="0"
@@ -508,7 +508,7 @@ function copyToClipboard() {
                   class="v-col-10"
                   v-text="item.content"
               ></div>
-              <v-dialog width="1000" height="800px">
+              <v-dialog max-width="1000" width="95%" height="800px">
                 <template v-slot:activator="{ props }">
                   <v-col>
                   <div

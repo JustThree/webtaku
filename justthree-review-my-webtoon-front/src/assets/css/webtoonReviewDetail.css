@@ -43,3 +43,24 @@
     display: flex;
     justify-content: center;
 }
+
+@media (max-width: 600px) {
+    .top-header-info {
+        margin: 0 0 0 12px;
+        font-size: 1.3em;
+    }
+    .webtoonImg {
+        height: 180px;
+        width: 120px;
+    }
+    .webtoon-title {
+        font-size: 1.3em;
+    }
+    .content {
+        min-height: 200px;
+    }
+    .top-user-info {
+        padding-left: 8px;
+        flex-wrap: wrap;
+    }
+}

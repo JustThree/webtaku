@@ -27,13 +27,10 @@ const title = props.title;
             class="no-underline"
             :to="'/webtoon/' + itemWebtoon.masterId">
         <v-card
-          class="elevation-0"
+          class="elevation-0 webtoon-card"
             :class="['ma-4', selectedClass]"
-            :width="200"
         >
-          <div
-              style="height:300px;"
-          >
+          <div class="webtoon-thumb">
           <v-img
               class="elevation-0"
               height="100%"
@@ -102,5 +99,43 @@ h2 {
 }
 .slide-fade-enter-active {
   transition: all 2s ease;
+}
+
+.webtoon-card {
+  width: 200px;
+}
+.webtoon-thumb {
+  height: 300px;
+}
+
+@media (max-width: 960px) {
+  .webtoon-card {
+    width: 160px;
+  }
+  .webtoon-thumb {
+    height: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .webtoon-card {
+    width: 120px;
+  }
+  .webtoon-thumb {
+    height: 180px;
+  }
+  h2 {
+    font-size: 1.1rem;
+    padding: 6px 0 0 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .webtoon-card {
+    width: 100px;
+  }
+  .webtoon-thumb {
+    height: 150px;
+  }
 }
 </style>

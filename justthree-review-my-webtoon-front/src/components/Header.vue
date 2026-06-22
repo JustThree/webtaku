@@ -19,7 +19,7 @@
       <v-spacer class="d-md-none"></v-spacer>
 
       <v-toolbar-items class="header-actions">
-        <v-card-text class="mt-1 header-search">
+        <div class="header-search d-flex align-center">
           <v-text-field
               v-model="searchText"
               :loading = "loading"
@@ -32,7 +32,7 @@
               @keyup.enter="onClick"
               @click:append-inner="onClick"
           ></v-text-field>
-        </v-card-text>
+        </div>
         <v-btn class="d-none d-md-flex" v-if="!user" href="/user/login">
           로그인
         </v-btn>
@@ -125,6 +125,10 @@ function navigate(fn) {
 .header-actions {
   width: 50%;
 }
+.header-search {
+  flex: 1;
+  padding: 0 16px;
+}
 
 @media (max-width: 960px) {
   .header-toolbar {
@@ -138,7 +142,7 @@ function navigate(fn) {
     height: 36px;
   }
   .header-search {
-    padding: 0 8px !important;
+    padding: 0 8px;
   }
 }
 </style>

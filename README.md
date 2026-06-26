@@ -1,6 +1,7 @@
 
 ![텍스트](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=WebTaku)
 
+배포 http://130.162.130.233/
 
 ## WebTaku Monolith
 > 채용연계형 MSA 기반 Full Stack 양성과정 3차 Final Project

@@ -46,7 +46,10 @@ public class MyPageService {
     private final FollowRepository followRepository;
     private final AmazonS3Client s3Client;
     private final BoardImageRepository boardImageRepository;
-    private static String bucketName = "just-three";
+
+    @Value("${cloud.aws.s3.bucket}")
+    private String bucketName;
+
     private final BoardImageService boardImageService;
 
 

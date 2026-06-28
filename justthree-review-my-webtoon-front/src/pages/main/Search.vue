@@ -132,7 +132,8 @@ type = 1
                           class="no-color-line"
             >
               <v-img
-                  :src="item.imgUrl"
+                  :src="n === 4 ? profileSrc(item.imgUrl) : item.imgUrl"
+                  @error="n === 4 ? onProfileError($event) : null"
                   :aspect-ratio="1"
                   cover="true"
               ></v-img>
@@ -157,10 +158,15 @@ type = 1
 
 </style>
 <script>
+import { profileSrc, onProfileError } from '@/common.js';
+
 export default {
   data: () => ({
     tab: null,
   }),
+  setup() {
+    return { profileSrc, onProfileError };
+  }
 }
 
 </script>

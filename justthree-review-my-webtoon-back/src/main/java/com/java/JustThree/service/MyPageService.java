@@ -1,7 +1,6 @@
 package com.java.JustThree.service;
 
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.java.JustThree.domain.*;
@@ -216,8 +215,7 @@ public class MyPageService {
         try {
             String fileName = generateFileName(multipartFile.getOriginalFilename());
             File convertedFile = convertMultipartFileToFile(multipartFile);
-            s3Client.putObject(new PutObjectRequest(bucketName, fileName, convertedFile)
-                    .withCannedAcl(CannedAccessControlList.PublicRead));
+            s3Client.putObject(new PutObjectRequest(bucketName, fileName, convertedFile));
             convertedFile.delete();
             return fileName;
         } catch (IOException e) {

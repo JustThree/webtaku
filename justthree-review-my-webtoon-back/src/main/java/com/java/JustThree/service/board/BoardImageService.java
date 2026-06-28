@@ -2,7 +2,6 @@ package com.java.JustThree.service.board;
 
 import com.amazonaws.services.kms.model.NotFoundException;
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.java.JustThree.domain.Board;
@@ -66,8 +65,7 @@ public class BoardImageService {
         try {
             String fileName = generateFileName(mf.getOriginalFilename());
             File convertedFile = convertMultipartFileToFile(mf); //MultipartFile → File
-            s3Client.putObject(new PutObjectRequest(bucketName, fileName, convertedFile)
-                    .withCannedAcl(CannedAccessControlList.PublicRead));
+            s3Client.putObject(new PutObjectRequest(bucketName, fileName, convertedFile));
             convertedFile.delete();
             return fileName;
         } catch (IOException e) {

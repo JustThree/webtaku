@@ -26,7 +26,7 @@
                       placeholder="변경할 닉네임을 입력하세요" prepend-inner-icon="mdi-account-outline"
                       variant="outlined"></v-text-field>
         <div class="input-group-append">
-        <v-btn class="vaildateBtn basicBtnColor" @click="checkNickname">중복확인</v-btn>
+        <v-btn class="validateBtn basicBtnColor" @click="checkNickname">중복확인</v-btn>
         </div>
       </div>
     </div>
@@ -53,7 +53,14 @@ const checkNickNameUrl = apiBase() + import.meta.env.VITE_CHECK_NICKNAME_API_PAT
 
 
 const userProfileImageUrl = "@/assets/images/blackDUK-removebg-preview.png";
-const selectedFile = ref([]);
+const selectedFile = ref(null);
+
+function pickFile(v) {
+  if (!v) return null;
+  if (v instanceof File) return v;
+  if (Array.isArray(v) && v[0] instanceof File) return v[0];
+  return null;
+}
 const newNickname = ref("");
 const nicknameAvailabilityMsg = ref("");
 const currentUser = ref(user.usersId)
@@ -65,19 +72,20 @@ const check = ref(
   }
 )
 
-watch(selectedFile,()=> {
-  profileImg.value = URL.createObjectURL(selectedFile.value[0]);
+watch(selectedFile, () => {
+  const f = pickFile(selectedFile.value);
+  if (f) profileImg.value = URL.createObjectURL(f);
 })
 
 const goBack = () => {
   window.history.back();
 };
-function checkAlg(msg, value){
+function checkAlg(msgRef, value){
   if (isEmptyString(value)){
-    msg.innerText = "값을 입력해주세요";
+    msgRef.value = "값을 입력해주세요";
     return true;
   } else if (isSpaceCharacter(value)){
-    msg.innerText = "공백은 입력할 수 없습니다";
+    msgRef.value = "공백은 입력할 수 없습니다";
     return true;
   } else {
     return false;
@@ -99,7 +107,7 @@ function isSpaceCharacter(value){
 
 
 const checkNickname = async () => {
-  if (!checkAlg(nicknameMsg, newNickname.value)) {
+  if (!checkAlg(nicknameAvailabilityMsg, newNickname.value)) {
 
     await axios.get(`${apiBase()}/api/check-nickname?nickname=${newNickname.value}`)
         .then((res) => {
@@ -116,7 +124,8 @@ const checkNickname = async () => {
 }
 const updateUserInfo = () => {
   const formData = new FormData();
-  formData.append("file", selectedFile.value[0]);
+  const f = pickFile(selectedFile.value);
+  if (f) formData.append("file", f);
   formData.append("newNickname", newNickname.value);
 
   if(newNickname.value != "" && !(check.value.nickCheck)){

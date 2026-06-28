@@ -64,6 +64,14 @@ const createdDiff = (created) => {
     }
 }
 
+const defaultProfile = new URL('@/assets/images/blackDUK-removebg-preview.png', import.meta.url).href
+
+const profileSrc = (url) => url || defaultProfile
+
+const onProfileError = (e) => {
+    if (e.target && e.target.src !== defaultProfile) e.target.src = defaultProfile
+}
+
 export {
-    api, apiToken, createdDiff, apiBase, wsBase
+    api, apiToken, createdDiff, apiBase, wsBase, profileSrc, onProfileError, defaultProfile
 };

@@ -1,6 +1,6 @@
 <script setup>
 
-import {api, apiToken} from "@/common.js";
+import {api, apiToken, profileSrc, onProfileError} from "@/common.js";
 import {copyText} from 'vue3-clipboard'
 import {useRoute} from "vue-router";
 import {ref, watch} from "vue";
@@ -262,7 +262,8 @@ function copyToClipboard() {
                   class="v-col 3"
               >
                 <img
-                    :src="reviewData.profileImg"
+                    :src="profileSrc(reviewData.profileImg)"
+                    @error="onProfileError"
                     style="width:24px; height:24px">
                 <router-link :to="'/mypage/userinfo/' + reviewData.writerId"
                              class="no-color-line"

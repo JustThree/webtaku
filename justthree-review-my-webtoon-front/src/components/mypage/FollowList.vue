@@ -33,7 +33,7 @@
                 </div>
               </div>
               <v-avatar class="ma-6" size="125" rounded="10">
-                <img :src="item.profileUrl" alt="" style="width: 100%">
+                <img :src="profileSrc(item.profileUrl)" @error="onProfileError" alt="" style="width: 100%">
               </v-avatar>
             </div>
           </v-card>
@@ -47,7 +47,7 @@
 
 
 <script setup>
-import {api} from '@/common.js'
+import {api, profileSrc, onProfileError} from '@/common.js'
 import {defineProps, onBeforeMount, reactive, ref, watch} from "vue";
 const props = defineProps(['usersId']);
 let usersId=props.usersId;

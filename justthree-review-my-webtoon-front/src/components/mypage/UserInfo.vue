@@ -11,7 +11,7 @@
   <div>
     <div id="myInfoLayout">
       <v-avatar size="230" id="profileimg">
-        <img :src="profileUrl" alt="profileimg" style="width: 100%">
+        <img :src="profileSrc(profileUrl)" @error="onProfileError" alt="profileimg" style="width: 100%">
       </v-avatar>
 <!--      <div id="userPic"><img :src="profileUrl" alt=""></div>-->
       <div id="currentUser">{{usersNickname}}</div>
@@ -65,7 +65,7 @@
   </div>
 </template>
 <script setup>
-import {api} from '@/common.js'
+import {api, profileSrc, onProfileError} from '@/common.js'
 import {defineProps, onBeforeMount, reactive, ref} from "vue";
 import router from "@/router/index.js";
 import {useAuthStore} from "@/stores/auth.store.js";

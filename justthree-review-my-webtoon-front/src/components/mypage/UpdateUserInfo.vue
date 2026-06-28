@@ -12,7 +12,7 @@
   <div>
     <v-card id="updateUserInfoForm_layout" class="mx-auto pa-12 pb-8" elevation="8" max-width="560" rounded="lg" style="text-align: center">
       <div id="profileImgLayOut">
-      <v-avatar size="110" id="profileimg"><img :src=profileImg alt="profileimg" style="width: 100%"></v-avatar>
+      <v-avatar size="110" id="profileimg"><img :src="profileSrc(profileImg)" @error="onProfileError" alt="profileimg" style="width: 100%"></v-avatar>
       </div>
 <!--      파일 인풋 -->
       <div class="text-subtitle-1 text-medium-emphasis d-flex align-center justify-space-between">프로필 사진 변경</div>
@@ -44,7 +44,7 @@
 <script setup>
 import axios from "axios";
 import {onMounted, reactive, ref, watch} from "vue";
-import {api, apiBase} from "@/common.js";
+import {api, apiBase, profileSrc, onProfileError} from "@/common.js";
 import router from "@/router/index.js";
 import {useAuthStore} from "@/stores/auth.store.js";
 const { user } = useAuthStore()

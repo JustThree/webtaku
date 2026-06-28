@@ -25,7 +25,8 @@
           <div>
             <v-avatar variant="outlined" size="48" class="mx-2" @click="$router.push(`/mypage/userinfo/${item.usersId}`)">
               <v-img
-                  :src="item.profileUrl"
+                  :src="profileSrc(item.profileUrl)"
+                  @error="onProfileError"
                   alt="sender"
               ></v-img>
             </v-avatar>
@@ -66,7 +67,7 @@
           >
             <template v-slot:prepend>
               <v-avatar variant="outlined">
-                <v-img :src="authStore.profile" alt="userProfile"></v-img>
+                <v-img :src="profileSrc(authStore.profile)" @error="onProfileError" alt="userProfile"></v-img>
               </v-avatar>
             </template>
             <template v-slot:append>
@@ -120,7 +121,7 @@
 </style>
 <script setup>
 import {ref, onUnmounted, defineProps, onMounted, watch} from 'vue';
-import {api, createdDiff, wsBase} from '@/common.js'
+import {api, createdDiff, wsBase, profileSrc, onProfileError} from '@/common.js'
 import {useAuthStore} from "@/stores/auth.store.js";
 import router from "@/router/index.js";
 
